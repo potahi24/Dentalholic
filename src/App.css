@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* 기본 */
+.clickable {
+  transition: transform 0.1s ease;
+}
+
+/* 눌리는 순간 */
+.clickable:active {
+  animation: bounceClick 0.3s ease;
+}
+
+.page-enter {
+  animation: pagePop 0.35s ease;
+}
+
+@keyframes pagePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.97) translateY(10px);
+  }
+  60% {
+    transform: scale(1.02) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎈 통통 튀는 애니메이션 */
+@keyframes bounceClick {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.8);   /* 눌림 */
+  }
+  60% {
+    transform: scale(1.1);   /* 튕김 */
+  }
+  100% {
+    transform: scale(1);     /* 복귀 */
+  }
+}
+
+/* 캐릭터 떠다니는 애니메이션 */
+@keyframes floatChar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 그림자 펄스 애니메이션 */
+@keyframes shadowPulse {
+  0% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.2); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0.2; }
+}
+
+/* 별 떠다니는 애니메이션 */
+@keyframes floatStar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shadow {
+  0% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scaleX(0.7) scaleY(0.7);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 0.25;
+  }
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.badge-popup {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 25px;
+  text-align: center;
+  animation: popIn 0.4s ease, bounce 0.6s ease 0.4s;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.15); }
+  50%  { transform: scale(0.95); }
+  70%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
