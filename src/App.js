@@ -1377,10 +1377,6 @@ useEffect(() => {
                 } else {
                   setActivePoint({ x, y, score: h.score });
                 }
-                 }}
-                  onMouseEnter={(e) => e.target.setAttribute("r", 7)}
-                  onMouseLeave={(e) => {
-                    if (activePoint?.x !== x) e.target.setAttribute("r", 5);
               }}
             />
           </g>
