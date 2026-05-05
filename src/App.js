@@ -405,7 +405,7 @@ const [showBadges, setShowBadges] = useState(false);
 
     useEffect(() => {
       badgeList.forEach(badge => {
-        const isEarned = badge.condition
+        const isEarned = badge.condition({ streak, totalScore, history });
         if (
           badge.condition({ streak, totalScore, history }) &&
           !userBadges.includes(badge.id)
@@ -1361,7 +1361,6 @@ useEffect(() => {
               cy={y}
               r={activePoint?.x === x ? 7 : 5}
               fill="#2B2D42"
-              onClick={() => setActivePoint({ x, y, score: h.score })}
               style={{
                 cursor: "pointer",
                 transition: "0.2s ease"
@@ -1378,6 +1377,10 @@ useEffect(() => {
                 } else {
                   setActivePoint({ x, y, score: h.score });
                 }
+                 }}
+                  onMouseEnter={(e) => e.target.setAttribute("r", 7)}
+                  onMouseLeave={(e) => {
+                    if (activePoint?.x !== x) e.target.setAttribute("r", 5);
               }}
             />
           </g>
