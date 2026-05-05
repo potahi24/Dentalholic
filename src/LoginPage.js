@@ -34,7 +34,7 @@ function LoginPage({ onLogin, onGuest }) {
       <div style={{
         position: "absolute",
         width: "100%",
-        height: "60%",
+        height: "100%",
         background: getTheme()
       }} />
 
@@ -119,9 +119,9 @@ function LoginPage({ onLogin, onGuest }) {
             style={{
               padding: "14px",
               borderRadius: "20px",
-              border: "2px solid #2B2D42",
+              border: "2px solid #d1d2e1",
               background: "transparent",
-              color: "#2B2D42",
+              color: "#d1d2dd",
               fontWeight: "600",
               fontSize: "14px"
             }}
